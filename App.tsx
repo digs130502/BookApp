@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
+import { ImageSourcePropType } from "react-native";
 import MyBooksScreen from "./screens/MyBooksScreen";
 import FindScreen from "./screens/FindScreen";
 import DiscoverScreen from "./screens/DiscoverScreen";

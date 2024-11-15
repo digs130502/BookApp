@@ -9,12 +9,19 @@ import {
   FlatList,
 } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ImageSourcePropType } from "react-native";
 import { FindStackParamList } from "../App"; // Adjust path as necessary
 
 type Props = NativeStackScreenProps<FindStackParamList, "Book Details">;
 
 export default function BookDetailsScreen({ route }: Props) {
-  const { title, author, image, description, price } = route.params;
+  const { title, author, image, description, price } = route.params as {
+    title: string;
+    author: string;
+    image: ImageSourcePropType; // Handle both URI and local assets
+    description: string;
+    price: string;
+  };
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -23,12 +30,11 @@ export default function BookDetailsScreen({ route }: Props) {
   const handleAddToShelf = (shelf: string) => {
     setModalVisible(false);
     alert(`"${title}" added to "${shelf}" shelf!`);
-    // Here, you can add logic to update the shelf in your state or backend
   };
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: image }} style={styles.bookImage} />
+      <Image source={image} style={styles.bookImage} />
       <Text style={styles.bookTitle}>{title}</Text>
       <Text style={styles.bookAuthor}>by {author}</Text>
       <Text style={styles.description}>{description}</Text>
