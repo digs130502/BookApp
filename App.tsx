@@ -30,9 +30,22 @@ export type FindStackParamList = {
   };
 };
 
+// Param List for Discover stack
+export type DiscoverStackParamList = {
+  Discover: undefined;
+  "Book Details": {
+    title: string;
+    author: string;
+    image: string;
+    description: string;
+    price: string;
+  };
+};
+
 const Tab = createBottomTabNavigator();
 const MyBooksStack = createStackNavigator<MyBooksStackParamList>();
 const FindStack = createStackNavigator<FindStackParamList>();
+const DiscoverStack = createStackNavigator<DiscoverStackParamList>();
 
 // MyBooksStackNavigator
 function MyBooksStackNavigator() {
@@ -54,13 +67,35 @@ function FindStackNavigator() {
   );
 }
 
+// DiscoverStackNavigator
+function DiscoverStackNavigator() {
+  return (
+    <DiscoverStack.Navigator>
+      <DiscoverStack.Screen name="Discover" component={DiscoverScreen} />
+      <DiscoverStack.Screen name="Book Details" component={BookDetailsScreen} />
+    </DiscoverStack.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="My Books" component={MyBooksStackNavigator} />
-        <Tab.Screen name="Find" component={FindStackNavigator} />
-        <Tab.Screen name="Discover" component={DiscoverScreen} />
+        <Tab.Screen
+          name="My Books"
+          component={MyBooksStackNavigator}
+          options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Find"
+          component={FindStackNavigator}
+          options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Discover"
+          component={DiscoverStackNavigator}
+          options={{ headerShown: false }}
+        />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
