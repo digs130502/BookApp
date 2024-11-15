@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, Image } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { MyBooksStackParamList } from "../App"; // Adjust path if using a separate types file
+import { MyBooksStackParamList } from "../App"; // Adjust path if necessary
 
 type Props = NativeStackScreenProps<MyBooksStackParamList, "Book List">;
 
 export default function BookListScreen({ route }: Props) {
-  const { books, category } = route.params; // TypeScript now knows the structure of params
+  const { books, category } = route.params;
 
   return (
     <View style={styles.container}>
@@ -16,8 +16,12 @@ export default function BookListScreen({ route }: Props) {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.bookItem}>
-            <Text style={styles.bookTitle}>{item.title}</Text>
-            <Text style={styles.bookAuthor}>by {item.author}</Text>
+            <Image source={item.image} style={styles.bookImage} />
+            <View style={styles.bookDetails}>
+              <Text style={styles.bookTitle}>{item.title}</Text>
+              <Text style={styles.bookAuthor}>by {item.author}</Text>
+              <Text style={styles.bookDescription}>{item.description}</Text>
+            </View>
           </View>
         )}
       />
@@ -38,10 +42,21 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   bookItem: {
+    flexDirection: "row",
+    alignItems: "flex-start",
     padding: 15,
     backgroundColor: "#f9f9f9",
     marginBottom: 10,
     borderRadius: 8,
+  },
+  bookImage: {
+    width: 50,
+    height: 75,
+    marginRight: 10,
+    borderRadius: 5,
+  },
+  bookDetails: {
+    flex: 1,
   },
   bookTitle: {
     fontSize: 18,
@@ -50,5 +65,10 @@ const styles = StyleSheet.create({
   bookAuthor: {
     fontSize: 14,
     color: "#555",
+  },
+  bookDescription: {
+    fontSize: 12,
+    color: "#555",
+    marginTop: 5,
   },
 });

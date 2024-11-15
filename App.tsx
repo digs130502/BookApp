@@ -14,7 +14,13 @@ import BookDetailsScreen from "./screens/BookDetailsScreen"; // Screen for displ
 export type MyBooksStackParamList = {
   "My Books Home": undefined;
   "Book List": {
-    books: Array<{ id: string; title: string; author: string }>;
+    books: Array<{
+      id: string;
+      title: string;
+      author: string;
+      image: any; // Local asset
+      description: string;
+    }>;
     category: string;
   };
 };
