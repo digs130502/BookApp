@@ -1,36 +1,62 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { MyBooksStackParamList } from "../App"; // Adjust path as needed
 
-export default function MyBooksScreen() {
+type Props = NativeStackScreenProps<MyBooksStackParamList, "My Books Home">;
+
+export default function MyBooksScreen({ navigation }: Props) {
+  const bookCategories = {
+    toRead: [
+      { id: "1", title: "The Catcher in the Rye", author: "J.D. Salinger" },
+      { id: "2", title: "The Road", author: "Cormac McCarthy" },
+    ],
+    read: [
+      { id: "3", title: "Sapiens", author: "Yuval Noah Harari" },
+      { id: "4", title: "Thinking, Fast and Slow", author: "Daniel Kahneman" },
+    ],
+    currentlyReading: [
+      { id: "5", title: "Atomic Habits", author: "James Clear" },
+      { id: "6", title: "The Lean Startup", author: "Eric Ries" },
+    ],
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My Books</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => alert("To Read clicked!")}
-        >
-          <Text style={styles.buttonText}>To Read</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => alert("Read clicked!")}
-        >
-          <Text style={styles.buttonText}>Read</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => alert("Currently Reading clicked!")}
-        >
-          <Text style={styles.buttonText}>Currently Reading</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => alert("Create New Shelf clicked!")}
-        >
-          <Text style={styles.buttonText}>Create New Shelf</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate("Book List", {
+            books: bookCategories.toRead,
+            category: "To Read",
+          })
+        }
+      >
+        <Text style={styles.buttonText}>To Read</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate("Book List", {
+            books: bookCategories.read,
+            category: "Read",
+          })
+        }
+      >
+        <Text style={styles.buttonText}>Read</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate("Book List", {
+            books: bookCategories.currentlyReading,
+            category: "Currently Reading",
+          })
+        }
+      >
+        <Text style={styles.buttonText}>Currently Reading</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -39,31 +65,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent: "center",
     backgroundColor: "#fff",
-    justifyContent: "center", // Center content vertically
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    textAlign: "center",
     marginBottom: 20,
-  },
-  buttonContainer: {
-    justifyContent: "center",
-    alignItems: "center", // Center content horizontally
+    textAlign: "center",
   },
   button: {
-    backgroundColor: "#007BFF", // Button color
-    paddingVertical: 15, // Vertical padding for touch area
-    paddingHorizontal: 20, // Horizontal padding for better spacing
+    backgroundColor: "#007BFF",
+    paddingVertical: 15,
     borderRadius: 10,
-    width: "80%", // Make buttons take up 80% of the screen width
-    marginVertical: 10, // Add space between buttons
-    alignItems: "center", // Center text inside the button
+    marginBottom: 10,
+    alignItems: "center",
   },
   buttonText: {
-    color: "#fff", // White text color
-    fontSize: 18,
+    color: "#fff",
+    fontSize: 16,
     fontWeight: "bold",
   },
 });
