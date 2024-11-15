@@ -11,7 +11,7 @@ import {
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MyBooksStackParamList } from "../App"; // Adjust path as needed
 
-type Props = NativeStackScreenProps<MyBooksStackParamList, "My Books Home">;
+type Props = NativeStackScreenProps<MyBooksStackParamList, "My Books">;
 
 export default function MyBooksScreen({ navigation }: Props) {
   const [bookCategories, setBookCategories] = useState({

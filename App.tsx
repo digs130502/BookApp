@@ -12,7 +12,7 @@ import BookDetailsScreen from "./screens/BookDetailsScreen"; // Screen for displ
 
 // Param List for My Books stack
 export type MyBooksStackParamList = {
-  "My Books Home": undefined;
+  "My Books": undefined;
   "Book List": {
     books: Array<{
       id: string;
@@ -58,7 +58,7 @@ const DiscoverStack = createStackNavigator<DiscoverStackParamList>();
 function MyBooksStackNavigator() {
   return (
     <MyBooksStack.Navigator>
-      <MyBooksStack.Screen name="My Books Home" component={MyBooksScreen} />
+      <MyBooksStack.Screen name="My Books" component={MyBooksScreen} />
       <MyBooksStack.Screen name="Book List" component={BookListScreen} />
     </MyBooksStack.Navigator>
   );
