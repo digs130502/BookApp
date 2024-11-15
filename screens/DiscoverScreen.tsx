@@ -21,7 +21,7 @@ const trends = [
       {
         id: "1",
         title: "The Great Gatsby",
-        cover: "https://via.placeholder.com/100x150?text=Gatsby",
+        cover: require("../assets/book-covers/the-great-gatsby.png"),
         description:
           "A classic novel set in the Jazz Age, exploring themes of wealth, love, and the American Dream.",
         author: "F. Scott Fitzgerald",
@@ -30,7 +30,7 @@ const trends = [
       {
         id: "2",
         title: "1984",
-        cover: "https://via.placeholder.com/100x150?text=1984",
+        cover: require("../assets/book-covers/1984.png"),
         description:
           "A dystopian novel that delves into totalitarianism, surveillance, and the suppression of individuality.",
         author: "George Orwell",
@@ -39,7 +39,7 @@ const trends = [
       {
         id: "3",
         title: "The Hobbit",
-        cover: "https://via.placeholder.com/100x150?text=Hobbit",
+        cover: require("../assets/book-covers/the-hobbit.png"),
         description:
           "A fantasy adventure following Bilbo Baggins on a journey to reclaim a treasure guarded by a dragon.",
         author: "J.R.R. Tolkien",
@@ -54,7 +54,7 @@ const trends = [
       {
         id: "4",
         title: "Project Hail Mary",
-        cover: "https://via.placeholder.com/100x150?text=Hail+Mary",
+        cover: require("../assets/book-covers/project-hailmary.png"),
         description:
           "A lone astronaut must save Earth in this gripping and surprising space adventure.",
         author: "Andy Weir",
@@ -63,7 +63,7 @@ const trends = [
       {
         id: "5",
         title: "Klara and the Sun",
-        cover: "https://via.placeholder.com/100x150?text=Klara",
+        cover: require("../assets/book-covers/klara.png"),
         description:
           "A dystopian story of love and humanity seen through the eyes of an AI robot.",
         author: "Kazuo Ishiguro",
@@ -72,7 +72,7 @@ const trends = [
       {
         id: "6",
         title: "Malibu Rising",
-        cover: "https://via.placeholder.com/100x150?text=Malibu",
+        cover: require("../assets/book-covers/malibu.png"),
         description:
           "A family drama centered on the lives of the Riva siblings and their annual summer party.",
         author: "Taylor Jenkins Reid",
@@ -87,7 +87,7 @@ const trends = [
       {
         id: "7",
         title: "A Promised Land",
-        cover: "https://via.placeholder.com/100x150?text=Promised+Land",
+        cover: require("../assets/book-covers/promised.png"),
         description:
           "The first volume of Barack Obama's memoir chronicling his political journey.",
         author: "Barack Obama",
@@ -96,7 +96,7 @@ const trends = [
       {
         id: "8",
         title: "The Night Watchman",
-        cover: "https://via.placeholder.com/100x150?text=Watchman",
+        cover: require("../assets/book-covers/night.png"),
         description:
           "A poignant novel about Native American struggles and resilience.",
         author: "Louise Erdrich",
@@ -105,7 +105,7 @@ const trends = [
       {
         id: "9",
         title: "The Overstory",
-        cover: "https://via.placeholder.com/100x150?text=Overstory",
+        cover: require("../assets/book-covers/overstory.png"),
         description:
           "A tale of intertwined lives, each connected by their shared love of trees.",
         author: "Richard Powers",
@@ -120,7 +120,7 @@ const trends = [
       {
         id: "10",
         title: "Circe",
-        cover: "https://via.placeholder.com/100x150?text=Circe",
+        cover: require("../assets/book-covers/circe.png"),
         description:
           "A powerful retelling of the mythological tale of Circe, the witch of Aiaia.",
         author: "Madeline Miller",
@@ -129,7 +129,7 @@ const trends = [
       {
         id: "11",
         title: "Where the Crawdads Sing",
-        cover: "https://via.placeholder.com/100x150?text=Crawdads",
+        cover: require("../assets/book-covers/where.png"),
         description:
           "A haunting mystery set in the marshlands of North Carolina.",
         author: "Delia Owens",
@@ -138,7 +138,7 @@ const trends = [
       {
         id: "12",
         title: "Educated",
-        cover: "https://via.placeholder.com/100x150?text=Educated",
+        cover: require("../assets/book-covers/educated.png"),
         description:
           "A memoir of a woman who grows up in a survivalist family and pursues education against all odds.",
         author: "Tara Westover",
@@ -153,7 +153,7 @@ const trends = [
       {
         id: "13",
         title: "Dune",
-        cover: "https://via.placeholder.com/100x150?text=Dune",
+        cover: require("../assets/book-covers/dune.png"),
         description:
           "A sci-fi epic that tells the story of Paul Atreides and the desert planet Arrakis.",
         author: "Frank Herbert",
@@ -162,7 +162,7 @@ const trends = [
       {
         id: "14",
         title: "Foundation",
-        cover: "https://via.placeholder.com/100x150?text=Foundation",
+        cover: require("../assets/book-covers/foundation.png"),
         description:
           "A saga about the fall and rise of civilizations in the galaxy.",
         author: "Isaac Asimov",
@@ -171,7 +171,7 @@ const trends = [
       {
         id: "15",
         title: "Ender’s Game",
-        cover: "https://via.placeholder.com/100x150?text=Enders+Game",
+        cover: require("../assets/book-covers/ender.png"),
         description:
           "A young genius is trained to battle an alien threat in this sci-fi classic.",
         author: "Orson Scott Card",
@@ -186,7 +186,7 @@ const trends = [
       {
         id: "16",
         title: "Moby Dick",
-        cover: "https://via.placeholder.com/100x150?text=Moby+Dick",
+        cover: require("../assets/book-covers/moby.png"),
         description: "The epic tale of a man's obsession with a white whale.",
         author: "Herman Melville",
         price: "$8.99",
@@ -194,7 +194,7 @@ const trends = [
       {
         id: "17",
         title: "Little Women",
-        cover: "https://via.placeholder.com/100x150?text=Little+Women",
+        cover: require("../assets/book-covers/little.png"),
         description: "A heartwarming story of the March sisters growing up.",
         author: "Louisa May Alcott",
         price: "$7.99",
@@ -202,7 +202,7 @@ const trends = [
       {
         id: "18",
         title: "Jane Eyre",
-        cover: "https://via.placeholder.com/100x150?text=Jane+Eyre",
+        cover: require("../assets/book-covers/jane.png"),
         description:
           "A gothic romance about a young governess and her mysterious employer.",
         author: "Charlotte Brontë",
@@ -217,7 +217,7 @@ const trends = [
       {
         id: "19",
         title: "The Name of the Wind",
-        cover: "https://via.placeholder.com/100x150?text=Name+of+the+Wind",
+        cover: require("../assets/book-covers/name.png"),
         description:
           "The story of a gifted young man on his journey to become a legend.",
         author: "Patrick Rothfuss",
@@ -226,7 +226,7 @@ const trends = [
       {
         id: "20",
         title: "The Way of Kings",
-        cover: "https://via.placeholder.com/100x150?text=Way+of+Kings",
+        cover: require("../assets/book-covers/way.png"),
         description:
           "An epic fantasy about a shattered world and the heroes who rise to defend it.",
         author: "Brandon Sanderson",
@@ -235,7 +235,7 @@ const trends = [
       {
         id: "21",
         title: "Mistborn",
-        cover: "https://via.placeholder.com/100x150?text=Mistborn",
+        cover: require("../assets/book-covers/mistborn.png"),
         description:
           "A band of rebels seeks to overthrow an immortal tyrant using magical powers.",
         author: "Brandon Sanderson",
@@ -269,7 +269,7 @@ export default function DiscoverScreen({ navigation }: Props) {
                   })
                 }
               >
-                <Image source={{ uri: item.cover }} style={styles.bookImage} />
+                <Image source={item.cover} style={styles.bookImage} />
                 <Text style={styles.bookTitle}>{item.title}</Text>
               </TouchableOpacity>
             )}
