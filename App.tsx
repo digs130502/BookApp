@@ -7,18 +7,34 @@ import FindScreen from "./screens/FindScreen";
 import DiscoverScreen from "./screens/DiscoverScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import BookListScreen from "./screens/BookListScreen"; // Screen for displaying book lists
+import BookDetailsScreen from "./screens/BookDetailsScreen"; // Screen for displaying book details
 
+// Param List for My Books stack
 export type MyBooksStackParamList = {
-  "My Books Home": undefined; // No parameters for this screen
+  "My Books Home": undefined;
   "Book List": {
     books: Array<{ id: string; title: string; author: string }>;
     category: string;
-  }; // Parameters for Book List
+  };
+};
+
+// Param List for Find stack
+export type FindStackParamList = {
+  Find: undefined;
+  "Book Details": {
+    title: string;
+    author: string;
+    image: string;
+    description: string;
+    price: string;
+  };
 };
 
 const Tab = createBottomTabNavigator();
-const MyBooksStack = createStackNavigator();
+const MyBooksStack = createStackNavigator<MyBooksStackParamList>();
+const FindStack = createStackNavigator<FindStackParamList>();
 
+// MyBooksStackNavigator
 function MyBooksStackNavigator() {
   return (
     <MyBooksStack.Navigator>
@@ -28,12 +44,22 @@ function MyBooksStackNavigator() {
   );
 }
 
+// FindStackNavigator
+function FindStackNavigator() {
+  return (
+    <FindStack.Navigator>
+      <FindStack.Screen name="Find" component={FindScreen} />
+      <FindStack.Screen name="Book Details" component={BookDetailsScreen} />
+    </FindStack.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="My Books" component={MyBooksStackNavigator} />
-        <Tab.Screen name="Find" component={FindScreen} />
+        <Tab.Screen name="Find" component={FindStackNavigator} />
         <Tab.Screen name="Discover" component={DiscoverScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
